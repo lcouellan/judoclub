@@ -1,3 +1,5 @@
-app:
-    resource: "@AppBundle/Controller/"
+judo:
+    resource: "@JudoBundle/Controller/"
     type:     annotation
+    prefix:   /
+

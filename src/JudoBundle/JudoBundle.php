@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace JudoBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class JudoBundle extends Bundle
 {
 }

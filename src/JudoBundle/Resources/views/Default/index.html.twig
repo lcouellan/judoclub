@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <p>Page d'accueil à modifier !</p>
+    {% for judoka in judokas %}
+        <div class="col-sm-6">
+            <span>{{ judoka.firstName }}</span> <span class="text-uppercase">{{ judoka.lastName }}</span>
+        </div>
+    {% endfor %}
+{% endblock %}
