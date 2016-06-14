@@ -1,10 +1,65 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <p>Page d'accueil à modifier !</p>
-    {% for judoka in judokas %}
-        <div class="col-sm-6">
-            <span>{{ judoka.firstName }}</span> <span class="text-uppercase">{{ judoka.lastName }}</span>
-        </div>
-    {% endfor %}
+    <h1 class="text-center">Classement général 2015-2016 !</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom du club</th>
+                <th>Points</th>
+                <th>Nombre de judokas</th>
+                <th>Classement</th>
+            </tr>
+        </thead>
+        <tbody >
+        {% for ranking in rankings %}
+            <tr>
+                <td>{{ ranking.club.name }}</td>
+                <td>{{ ranking.points}}</td>
+                <td>{{ ranking.club.nbJudokas}}</td>
+                <td>{{ loop.index }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="col-sm-6">
+        <h2>Classement Benjamins !</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nom du club</th>
+                <th>Classement</th>
+            </tr>
+            </thead>
+            <tbody >
+            {% for ranking in rankingsB %}
+                <tr>
+                    <td>{{ ranking.club.name }}</td>
+                    <td>{{ ranking.rank }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-6">
+        <h2>Classement Poussins !</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nom du club</th>
+                <th>Classement</th>
+            </tr>
+            </thead>
+            <tbody >
+            {% for ranking in rankingsP %}
+                <tr>
+                    <td>{{ ranking.club.name }}</td>
+                    <td>{{ ranking.rank }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
