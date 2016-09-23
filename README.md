@@ -19,6 +19,15 @@ Composer
 
 ### Installing
 
+Clone the repository
+
+```
+git clone https://github.com/lcouellan/judoclub.git
+
+cd judoclub
+```
+
+
 
 Install the dependencies
 
@@ -29,7 +38,7 @@ php composer.phar update
 Create your database and get the data
 
 ```
-php bin/console doctrine:schema:update
+php bin/console doctrine:schema:update --force
 php bin/console doctrine:fixtures:load
 ```
 
